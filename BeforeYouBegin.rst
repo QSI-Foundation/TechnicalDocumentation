@@ -21,7 +21,7 @@ PRIMER: Quantum Safe Infrastructure (QSI), A Zero-Knowledge Authentication (ZKA)
 Introduction
 ------------
 
-In a move to eliminate the burden and risk of password, key/secrets and certificate management, while mitigating the existential cyber risk of adversarial quantum decryption, Pure Security introduces Quantum Safe Infrastructure (QSI). QSI is comprised of two components; a cryptographic an autonomous cryptographic key management system (KMS), AKM, and its companion transport layer security protocol, QLS.  Together, AKM and QLS, provide a ZKA-based cybersecurity framework that was explicitly designed to be a drop-in replacement for PKI and TLS solution.  This is accomplished, by providing the level of protection necessary to support the complexity, extensibility, and scale of today’s hybrid Cloud-Edge + IOT + AI world.  Decades of reliance on PKI+TLS is a root cause of the persistent failures to protect digital assets/data from cyberattacks.  QSI simply and cost-effectively replaces these outdated standards with a solution explicitly designed to resolve all major issues plaguing PKI+TLS, regardless of architecture, connectivity, scale or digital asset type.
+In a move to eliminate the burden and risk of password, key/secrets and certificate management, while mitigating the existential cyber risk of adversarial quantum decryption, Pure Security introduces Quantum Safe Infrastructure (QSI). QSI is comprised of two components; an autonomous cryptographic key management system (KMS), AKM, and its companion transport layer security protocol, QLS.  Together, AKM and QLS, provide a ZKA-based cybersecurity framework that was explicitly designed to be a drop-in replacement for PKI and TLS solution.  This is accomplished, by providing the level of protection necessary to support the complexity, extensibility, and scale of today’s hybrid Cloud-Edge + IOT + AI world.  Decades of reliance on PKI+TLS is a root cause of the persistent failures to protect digital assets/data from cyberattacks.  QSI simply and cost-effectively replaces these outdated standards with a solution explicitly designed to resolve all major issues plaguing PKI+TLS, regardless of architecture, connectivity, scale or digital asset type.
 
 .. figure:: /images/QSIASR.jpg
    :alt: QSI Asset & Security Relationship Affiliations
@@ -63,7 +63,7 @@ Unfortunately, industry-wide inertia set in and rather than replace PKI+TLS with
 
 Problems plaguing traditional security have been well-documented; thus, finding a solution that achieves the following objectives would mitigate the limitations of PKI+TLS:
 
-1) A security framework architecture that simplifies the overall ICT security process, as well as operational.
+1) A security framework architecture that simplifies the overall ICT security process, as well as the OT security process.
 2) Elimination of the asymmetric key exchange, which remains a major ICT/IOT burden for ongoing key and certificate management, as well as high risk with spoofable certificate authorities that require explicit static trust.
 3) Significantly reduction of overall costs of implementation and maintenance.
 4) Frequent refresh of security credentials.
@@ -81,7 +81,7 @@ QSI DESIGN REQUIREMENTS
 
 In keeping with the aforementioned ICT simplification goals from the previous section, QSI (AKM+QLS) was explicitly designed to address all known issues plaguing the use of PKI+TLS, coupled with the addition of some much-needed security extensions.  These design goals were translated into the following requirements:
 
-1) Given that in reality, most ICT implementations are closed systems (i.e., all actors are known entities using previously established associations prior to connecting), simplify the authentication process, since PKI+TLS assumes no knowledge of the other actors in a potential security relationship.  Thus, taking advantage of known actors, makes it possible to replace the asymmetric authentication phase with a much simpler (safer) solution.
+1) Given that in reality, most ICT implementations are closed systems (i.e., all actors are known entities using previously established associations prior to connecting), simplify the authentication process, since PKI+TLS assumes no knowledge of the other actors in a potential security relationship.  Thus, taking advantage of known actors, makes it possible to replace the asymmetric authentication phase with a much simpler (hence, safer) solution.
 2) Authenticate the sender without sharing any secrets, creating a Zero Knowledge Authentication (ZKA) solution.
 3) Reduce to zero, if possible, any latency incurred during security session establishment.
 4) Automate the security credential refresh process while still maintaining uniqueness between security credentials.
@@ -91,7 +91,7 @@ In keeping with the aforementioned ICT simplification goals from the previous se
 8) Allow sessions to be established as event driven and/or time driven.
 9) Utilize any existing or new standard cryptographic functions[#]_, wherever required or desired (crypto-agnostic).
 
-The QSI platform design resulting from the above requirements, not only addressed all known PKI+TLS issues as well as the additional security extensions deemed critical, but it exceeded expectations with an autonomous, ZKA-based solution that could effectively execute in perpetuity, it’s refreshing of multipoint, end-to-end security credentials without ever involving IT personnel or an IT network management device in its daily management and oversight.
+The QSI platform design resulting from the above requirements, not only addressed all known PKI+TLS issues as well as the additional security extensions deemed critical, but it exceeded expectations with an autonomous, ZKA-based solution that could effectively execute in perpetuity, its refreshing of multipoint, end-to-end security credentials without ever involving ICT personnel or an ICT network management device in its daily management and oversight.
 
 .. [#] Example, NIST certified functions and libraries.
 
@@ -103,7 +103,7 @@ QSI can guarantee that no two sessions will ever have any direct correlation to 
 NO MITM WITH THE ZERO-TRUST ARCHITECTURE
 ----------------------------------------
 
-The goal of eliminating “Man-in-the-Middle” (MITM) attacks inspired the concept of the QSI, zero-knowledge authentication (ZKA) solution.  In an QSI, ZKA-based architecture, zero information that could lead to a breach is ever exchanged.  As, all calculations are done internally and autonomously within and among all nodes within a QSR.
+The goal of eliminating “Man-in-the-Middle” (MITM) attacks inspired the concept of the QSI, zero-knowledge authentication (ZKA) solution.  In an QSI, ZKA-based architecture, zero information that could lead to a breach is ever exchanged.  As, all calculations are done internally and autonomously within and amongst all nodes, within a QSR.
 
 Part of implementing the QSI, ZKA based solution involved tying a unique hardware value that is specific to the specific hardware module to the AKM identifier for that module.  So doing, ensures that the AKM identifier could never be spoofed, because of the shared immutability of the hardware value being stored both locally within a HW Trust Zone as well as the administrative backend QSI server.
 
@@ -182,7 +182,7 @@ Although, QSI deployments can vary, the implementation inferred throughout this 
 5) All refreshes utilize a subset of the aforementioned random data.  Hence, assuming the algorithms used are context sensitive with respect to the order of the input random data, then, the nPr function may be used to accurately predict the underlying entropy.   
 6) All QSR security credentials include separate fallback (and  fail-safe) re-synchronization security credential information.  Providing two levels of back-up resynchronization.
 
-The entire process for maintaining synchronization and maintaining secrets is both simplistic and mechanical in nature.  Thus, reducing thereat surface of a given deployment  down to the security of the FIPS certified HSM or key stores.
+The entire process for maintaining synchronization and maintaining secrets is both simplistic and mechanical in nature.  Thus, reducing threat surface of a given deployment  down to the security of the FIPS certified HSM or key stores.
 
 ATTACKS AND COUNTERMEASURES
 ---------------------------
@@ -211,17 +211,21 @@ Secure tunnels may be created with QSI communication by defining an AKM sub-rela
 ASSET INTEGRITY MANAGEMENT (AIM)
 ---------------------------------
 
-One of the key concerns in implementing the infrastructure for an IT network, is the integrity of not only the hardware assets connecting to the network, but also ensuring that only trust applications can be executed within the trusted hardware device.
+One of the key concerns in implementing the infrastructure for an IT network, is the integrity of not only the hardware assets connecting to the network, but also ensuring that only trusted applications can be executed within the trusted hardware device.
 
 Asset Integrity Management (AIM), which adheres to the ISO standard, IEC 62443[1], ensures that all covered assets can neither be spoofed nor modified without detection and covers both hardware assets as well as software (virtual) assets.  Additionally, AIM can also be configured such that only trusted applications (i.e., virtual assets) are allowed to execute on a given trusted hardware platform (i.e., hardware asset).  Thus, preventing unwanted applications such as ransomware, zero-day attacks, and other malware from executing.
 
-As part of addressing IEC 62443, AIM not only authenticates the integrity of individual hardware assets and/or software (virtual) assets, but also authenticate the integrity of groups of hardware assets forming a subsystem or system and within a hierarchical methodology, including groups of subsystems.
+As part of addressing IEC 62443, AIM not only authenticates the integrity of individual hardware assets and/or software (virtual) assets, but also authenticates the integrity of group of hardware assets forming a subsystem or system and within a hierarchical methodology, including groups of subsystems.
 
 All inter-module communication, utilizes an expanded concept of QSRs in order to ensure the highest possible level of security and integrity for communication between devices.
 
-Although, AIM is primarily a runtime application, ideally, AIM is additionally anchored within the boot code of a specific device.  The advantage of doing so, is twofold.
+Although, AIM is primarily a runtime application, ideally, AIM is additionally anchored within the boot code of a specific device.  The advantage of doing so, is for the following three reasons:
 
-First, AIM anchored within the boot code implements a secure boot mechanism.  Second, AIM eliminates the possibility of any potentially illicit modifications to the runtime applications by cross referencing each application as a separate virtual asset with an associated QSI IM Integrity Code that is maintained within a secure trust zone (preferably a hardware trust zone).  If the integrity code that is calculated does not match the integrity code stored within the trust zone, then the asset is flagged and not allowed to load.  Third, during runtime, AIM periodically monitors each software asset and flags and isolates any potential asset that no longer matches the expected value of the precalculated integrity code stored within the trust zone.
+1) AIM anchored within the boot code implements a secure boot mechanism.
+
+2) Second, AIM eliminates the possibility of any potentially illicit modifications to the runtime applications by cross referencing each application as a separate virtual asset with an associated QSI IM Integrity Code that is maintained within a secure trust zone (preferably a hardware trust zone).  If the integrity code that is calculated does not match the integrity code stored within the trust zone, then the asset is flagged and not allowed to load.
+
+3) Third, during runtime, AIM periodically monitors each software asset and flags and isolates any potential asset that no longer matches the expected value of the precalculated integrity code stored within the trust zone.
 
 CONCLUSION
 ----------

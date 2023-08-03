@@ -6,7 +6,7 @@
 Welcome to QSI-Foundation-GitHub-Docs's documentation!
 ======================================================
 
-The QSI-Foundation is an organization dedicated to the idea that cybersecurity and privacy should be available to all and should not be so costly that a significant portion of the population is left unprotected.  Additionally, the QSI-Foundation believes that no one should be afraid of the so-called, Quantum Apocolypse.  The methodology create by the QSI-Foundation and with your help, is what will prevent that from occurring by providing a solution that solves virtually every cybersecurity issue known as of this writing in 2023.
+The QSI-Foundation is an organization dedicated to the idea that cybersecurity and privacy should be available to all and should not be so costly that a significant portion of the population is left unprotected.  Additionally, the QSI-Foundation believes that no one should be afraid of the so-called, Quantum Apocalypse.  The methodology create by the QSI-Foundation and with your help, is what will prevent that from occurring by providing a solution that solves virtually every cybersecurity issue known as of this writing in 2023.
 
 It does this with simplicity, efficiency, and humility, by believing that anyone and everyone should be secure in the knowledge their data is safe and private.
 
