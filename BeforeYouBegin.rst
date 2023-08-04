@@ -215,11 +215,11 @@ One of the key concerns in implementing the infrastructure for an IT network, is
 
 Asset Integrity Management (AIM), which adheres to the ISO standard, IEC 62443[1], ensures that all covered assets can neither be spoofed nor modified without detection and covers both hardware assets as well as software (virtual) assets.  Additionally, AIM can also be configured such that only trusted applications (i.e., virtual assets) are allowed to execute on a given trusted hardware platform (i.e., hardware asset).  Thus, preventing unwanted applications such as ransomware, zero-day attacks, and other malware from executing.
 
-As part of addressing IEC 62443, AIM not only authenticates the integrity of individual hardware assets and/or software (virtual) assets, but also authenticates the integrity of group of hardware assets forming a subsystem or system and within a hierarchical methodology, including groups of subsystems.
+As part of addressing IEC 62443, AIM not only authenticates the integrity of individual hardware assets and/or software (virtual) assets, but also authenticates the integrity of a group of hardware assets forming a subsystem or an entire system and within a hierarchical methodology, including groups of subsystems.
 
-All inter-module communication, utilizes an expanded concept of QSRs in order to ensure the highest possible level of security and integrity for communication between devices.
+All inter-module communication utilizes an expanded concept of QSRs in order to ensure the highest possible level of security and integrity for communication between devices.
 
-Although, AIM is primarily a runtime application, ideally, AIM is additionally anchored within the boot code of a specific device.  The advantage of doing so, is for the following three reasons:
+Although, AIM is primarily a runtime application, ideally, AIM is additionally anchored within the boot code of a specific device.  The advantage of doing so, is for the following reasons:
 
 1) AIM anchored within the boot code implements a secure boot mechanism.
 
