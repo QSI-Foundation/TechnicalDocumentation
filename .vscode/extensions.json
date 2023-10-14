@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ms-azuretools.vscode-docker",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "ms-vscode.makefile-tools"
     ]
 }

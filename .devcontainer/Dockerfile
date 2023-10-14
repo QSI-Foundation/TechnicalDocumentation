@@ -5,7 +5,7 @@ RUN     apk -- add bash-completion
 RUN     sed -i -e's@:/bin/ash$@:/bin/bash@' -- /etc/passwd
 
 # Install tools
-RUN     apk -- add git-lfs
+RUN     apk -- add git-lfs make
 
 # Install python and its packages
 RUN     apk -- add py3-pip
