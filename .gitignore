@@ -1,1 +1,14 @@
-_build
+# Ignore built documentation
+/_build/
+
+# Common files
+~*
+.DS_Store
+.DS_Store?
+._*
+.*.sw[op]
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
