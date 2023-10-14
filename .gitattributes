@@ -1,0 +1,6 @@
+*       text eol=lf
+*.bat   eol=crlf
+
+*.jpg   -text binary
+*.png   -text binary
+*.vsdx  -text binary
