@@ -9,4 +9,5 @@ RUN     apk -- add git-lfs make
 
 # Install python and its packages
 RUN     apk -- add py3-pip
-RUN     pip -- install sphinx
+ADD     requirements.txt /requirements.txt
+RUN     pip install -r/requirements.txt && rm -- /requirements.txt
