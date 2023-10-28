@@ -1,22 +1,19 @@
-name: Deploy sphinx-build content to Pages
+# https://github.com/sphinx-notes/pages/tree/v3
+
+name: Deploy Sphinx documentation to Pages
 
 on:
   push:
-    branches: ['main', 'feature-ghpages']
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+    branches: [main, feature_gh-pages]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  pages:
+    runs-on: ubuntu-20.04
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - uses: sphinx-notes/pages@v3
-        with:
-          documentation_path: .

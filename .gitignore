@@ -1,5 +1,5 @@
 # Ignore built documentation
-/_build/
+/docs/_build/
 
 # Common files
 ~*
